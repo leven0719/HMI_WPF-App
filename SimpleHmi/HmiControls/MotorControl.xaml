@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="SimpleHmi.HmiControls.MotorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SimpleHmi.HmiControls" xmlns:local1="clr-namespace:SimpleHmi.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="Window_Loaded">
+    <Grid>
+        <UserControl>
+            <UserControl.Resources>
+                <local1:BooleanToBrushConverter x:Key="BooleanToBrushConverter"/>
+            </UserControl.Resources>
+            <Viewbox>
+                <Canvas Height="100" Width="100">
+
+                    <!--Step 1-->
+                    <Ellipse Canvas.Left="0" Canvas.Top="0" Height="100" Width="100" StrokeThickness="0.5" Stroke="Gray" >
+                        <Ellipse.Fill>
+                            <LinearGradientBrush x:Name="LinearProcessBrush" StartPoint="0.5,1" EndPoint="1,0" SpreadMethod="Pad">
+                                <GradientStop Color="#FF071923" Offset="0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <!--Step 2-->
+                    <Ellipse Canvas.Left="7.25" Canvas.Top="7.25" Height="85" Width="85" StrokeThickness="0.5" Stroke="Gray" >
+                        <Ellipse.Fill>
+                            <LinearGradientBrush x:Name="LinearProcessBrush2" StartPoint="1,0.5" EndPoint="0,1" SpreadMethod="Pad">
+                                <GradientStop Color="#FF071923" Offset="0" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <!--Step 3-->
+                    <Ellipse x:Name="EllipseMotor" Canvas.Left="12.25" Canvas.Top="12.25" Height="75" Width="75" StrokeThickness="0.5" Stroke="Black"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                  />
+
+                </Canvas>
+            </Viewbox>
+
+        </UserControl>
+    </Grid>
+</UserControl>
